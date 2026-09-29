@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PremiumHero from '../components/home/PremiumHero.astro';
+import ServiceHighlights from '../components/home/ServiceHighlights.astro';
+import ImageGrid from '../components/home/ImageGrid.astro';
+import Certifications from '../components/home/Certifications.astro';
+import StatsShowcase from '../components/home/StatsShowcase.astro';
+import IndustriesServed from '../components/home/IndustriesServed.astro';
+import PremiumCTA from '../components/home/PremiumCTA.astro';
+
+// 社交流量下页面要短：原模板 9 个版块精简为 7 个
+// 已移除 TechnologyInnovation（与 ServiceHighlights 重复）、
+// ProcessWorkflow（可保留，视客户内容而定）、Testimonials（初期无真实评价，空版块反而可疑）
+---
+
+<BaseLayout>
+  <PremiumHero />
+  <ServiceHighlights />
+  <ImageGrid />
+  <Certifications />
+  <StatsShowcase />
+  <IndustriesServed />
+  <PremiumCTA />
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import FloatContact from '@components/FloatContact.astro';
+import { SITE, TRACKING } from '@config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const currentPathname = Astro.url.pathname;
+
+const { 
+  title = SITE.title, 
+  description = SITE.description 
+} = Astro.props;
+
+// 分享卡片必须用绝对地址，否则 WhatsApp / FB 抓取不到缩略图
+const ogImageUrl = new URL(SITE.ogImage, SITE.url).toString();
+const pageUrl = new URL(Astro.url.pathname, SITE.url).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Facebook（分享到 WhatsApp、FB、TikTok 时显示的卡片） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImageUrl} />
+
+    <!-- Google Tag Manager（推荐：所有 Pixel 在 GTM 后台管理，改追踪不用重新构建） -->
+    {TRACKING.gtmId && (
+      <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${TRACKING.gtmId}');`} />
+    )}
+
+    <!-- Meta Pixel（仅在未使用 GTM 时生效） -->
+    {!TRACKING.gtmId && TRACKING.fbPixelId && (
+      <script is:inline set:html={`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${TRACKING.fbPixelId}');fbq('track','PageView');`} />
+    )}
+  </head>
+  <body class="flex min-h-screen flex-col bg-white font-sans text-neutral-900 antialiased">
+    {TRACKING.gtmId && (
+      <noscript>
+        <iframe src={`https://www.googletagmanager.com/ns.html?id=${TRACKING.gtmId}`}
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    )}
+    <Header currentPathname={currentPathname} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <FloatContact />
+  </body>
+</html>
+

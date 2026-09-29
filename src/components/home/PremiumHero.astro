@@ -1,0 +1,149 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+import { SITE, CONTACT, COMPANY, CERTIFICATIONS } from '@config/site';
+import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+
+const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hello, I found your website and I would like to request a quote.')}`;
+const hasWhatsApp = Boolean(CONTACT.whatsapp && CONTACT.whatsapp !== '8613800000000');
+// 配置了 heroVideo 就用视频做背景（社交流量下视频最抓人），否则回退到图片
+const hasVideo = Boolean(SITE.heroVideo);
+---
+
+<section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+  <!-- 背景：工厂巡览视频优先，没有则显示图片 -->
+  <div class="absolute inset-0">
+    {
+      hasVideo ? (
+        <video
+          src={SITE.heroVideo}
+          autoplay
+          muted
+          loop
+          playsinline
+          poster={SITE.heroImage}
+          class="w-full h-full object-cover"
+        />
+      ) : (
+        <Image
+          src={heroBgImg}
+          alt="Factory floor and machining equipment"
+          class="w-full h-full object-cover"
+          width={2070}
+          height={1380}
+          decoding="async"
+          fetchpriority="high"
+        />
+      )
+    }
+    <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+        </svg>
+        ISO 9001 Certified · Since {COMPANY.founded}
+      </div>
+
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+        {SITE.heroTitle}
+        <span class="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400 mt-2">
+          {SITE.heroHighlight}
+        </span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-slate-200 mb-6 max-w-2xl leading-relaxed">
+        {SITE.heroSubline}
+      </p>
+
+      <!-- 信任标签条：真实机械厂外贸站首屏标配，立刻建立信任 -->
+      <div class="flex flex-wrap gap-x-5 gap-y-2 mb-8 text-sm text-slate-200">
+        {CERTIFICATIONS.slice(0, 2).map((c) => (
+          <span class="inline-flex items-center">
+            <svg class="w-4 h-4 mr-1.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {c.name}
+          </span>
+        ))}
+        <span class="inline-flex items-center">
+          <svg class="w-4 h-4 mr-1.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {COMPANY.precision} Precision
+        </span>
+        <span class="inline-flex items-center">
+          <svg class="w-4 h-4 mr-1.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {COMPANY.countries} Countries
+        </span>
+        <span class="inline-flex items-center">
+          <svg class="w-4 h-4 mr-1.5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          OEM / ODM Support
+        </span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <Button href="/rfq" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
+          Get a Free Quote
+        </Button>
+        {
+          hasWhatsApp ? (
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track="whatsapp"
+              class="float-contact inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold text-white bg-[#25D366] hover:brightness-95 shadow-2xl transition-all"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+              </svg>
+              WhatsApp Us
+            </a>
+          ) : (
+            <Button href="/capabilities" size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!">
+              Explore Capabilities
+            </Button>
+          )
+        }
+      </div>
+
+      <!-- Quick Stats：改为读配置，换客户不用改组件 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/20">
+        {
+          [
+            { value: COMPANY.years, label: 'Years Experience' },
+            { value: COMPANY.machines, label: 'CNC Machines' },
+            { value: COMPANY.precision, label: 'Tolerance' },
+            { value: COMPANY.response, label: 'Quote Response' },
+          ].map((s) => (
+            <div class="group">
+              <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">
+                {s.value}
+              </div>
+              <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">
+                {s.label}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
+

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, CONTACT } from '../config/site';
+
+const today = new Date().toISOString().slice(0, 10);
+const sections = [
+  {
+    h: '1. Acceptance of Terms',
+    p: [`By accessing and using this website operated by ${SITE.title}, you accept and agree to be bound by these Terms of Service. If you do not agree, please do not use this website.`],
+  },
+  {
+    h: '2. Use of the Website',
+    p: [
+      'You may use this website only for lawful purposes and in a way that does not infringe the rights of others or restrict their use of the website.',
+      'You agree not to use the website in any manner that could damage, disable, overburden, or impair the site or interfere with any other party’s use of the website.',
+    ],
+  },
+  {
+    h: '3. Product Information and Quotations',
+    p: [
+      'Product specifications, drawings, tolerances, dimensions, materials and other technical information published on this website are provided for general reference only. Final specifications are confirmed in writing before production.',
+      'Quotations provided through this website or by email are valid for the period stated in the quotation and may be revised based on material costs, order quantity and production schedule.',
+    ],
+  },
+  {
+    h: '4. Intellectual Property',
+    p: [
+      'All content on this website, including text, images, logos, drawings and layouts, is the property of ' +
+        SITE.title +
+        ' or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute or use any content without our prior written permission.',
+      'Customer drawings, designs and technical documents submitted to us remain the property of the customer and are used solely for the purpose of manufacturing and quotation.',
+    ],
+  },
+  {
+    h: '5. Limitation of Liability',
+    p: [
+      'The information on this website is provided “as is” without warranties of any kind. To the fullest extent permitted by law, ' +
+        SITE.title +
+        ' shall not be liable for any indirect, incidental or consequential damages arising from the use of, or inability to use, this website.',
+    ],
+  },
+  {
+    h: '6. Governing Law',
+    p: [
+      'These Terms of Service are governed by and construed in accordance with the laws of the jurisdiction in which ' +
+        SITE.title +
+        ' is registered, without regard to conflict of law provisions.',
+    ],
+  },
+  {
+    h: '7. Contact Us',
+    p: [`If you have any questions about these Terms, please contact us at ${CONTACT.email}.`],
+  },
+];
+---
+
+<BaseLayout title={`Terms of Service - ${SITE.title}`} description={`Terms of Service for using the ${SITE.title} website.`}>
+  <section class="bg-slate-900 py-16 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Terms of Service</h1>
+      <p class="text-slate-300">Last updated: {today}</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl space-y-10 text-slate-700 leading-relaxed">
+        {sections.map((s) => (
+          <div>
+            <h2 class="mb-3 text-2xl font-semibold text-slate-900">{s.h}</h2>
+            {s.p.map((para) => (
+              <p class="mb-3">{para}</p>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

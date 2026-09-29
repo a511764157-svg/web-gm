@@ -1,0 +1,192 @@
+---
+import { NAVIGATION, SOCIAL_LINKS, SITE, CONTACT, CERTIFICATIONS } from '@config/site';
+import { Icon } from 'astro-iconset/components';
+
+const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hello, I am interested in your products.')}`;
+const hasWhatsApp = Boolean(CONTACT.whatsapp && CONTACT.whatsapp !== '8613800000000');
+---
+
+<footer class="bg-slate-900 text-slate-300">
+  <div class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
+      <!-- Company Info -->
+      <div class="lg:col-span-1 space-y-6">
+        <a href="/" class="flex items-center space-x-3 group">
+          {
+            SITE.logo ? (
+              <img src={SITE.logo} alt={SITE.title} class="h-12 w-auto object-contain" />
+            ) : (
+              <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-linear-to-br from-blue-600 to-teal-600">
+                <Icon name="lucide:package" class="w-7 h-7 text-white" />
+              </div>
+            )
+          }
+          <span class="text-xl font-bold text-white">
+            {SITE.title}
+          </span>
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
+          {SITE.description}
+        </p>
+        <div class="flex space-x-4">
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all"
+            aria-label="LinkedIn"
+          >
+            <Icon name="lucide:linkedin" class="w-5 h-5" />
+          </a>
+          <a
+            href={SOCIAL_LINKS.twitter}
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-400 hover:text-white transition-all"
+            aria-label="Twitter"
+          >
+            <Icon name="lucide:twitter" class="w-5 h-5" />
+          </a>
+          <a
+            href={SOCIAL_LINKS.facebook}
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-500 hover:text-white transition-all"
+            aria-label="Facebook"
+          >
+            <Icon name="lucide:facebook" class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">
+          Quick Links
+        </h3>
+        <ul class="space-y-3">
+          {NAVIGATION.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group"
+              >
+                <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">
+          Certifications
+        </h3>
+        <ul class="space-y-3">
+          {CERTIFICATIONS.map((cert) => (
+            <li>
+              <div class="flex items-start gap-2">
+                <Icon name="lucide:badge-check" class="w-4 h-4 text-teal-400 mt-0.5 shrink-0" />
+                <div>
+                  <span class="block text-sm text-slate-200 font-medium">{cert.name}</span>
+                  <span class="block text-xs text-slate-500">{cert.desc}</span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-6">
+          Get Started
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="/rfq" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+              Request a Quote
+            </a>
+          </li>
+          <li>
+            <a href="/facilities" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+              Find a Facility
+            </a>
+          </li>
+          <li>
+            <a href="/documentation" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
+              Documentation
+            </a>
+          </li>
+        </ul>
+        
+        <!-- 联系方式：邮箱用纯文本展示，方便复制（很多用户没配邮件客户端） -->
+        <div class="mt-6 space-y-2.5 text-sm text-slate-400">
+          {hasWhatsApp && (
+            <a href={waHref} target="_blank" rel="noopener noreferrer" data-track="whatsapp"
+               class="float-contact flex items-center gap-2 text-slate-300 hover:text-[#25D366] transition-colors">
+              <Icon name="lucide:message-circle" class="w-4 h-4 shrink-0" />
+              <span>WhatsApp {CONTACT.phone}</span>
+            </a>
+          )}
+          <a href={`mailto:${CONTACT.email}`} class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+            <Icon name="lucide:mail" class="w-4 h-4 shrink-0" />
+            <span class="select-all">{CONTACT.email}</span>
+          </a>
+          <a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`} class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+            <Icon name="lucide:phone" class="w-4 h-4 shrink-0" />
+            <span class="select-all">{CONTACT.phone}</span>
+          </a>
+          <p class="flex items-start gap-2">
+            <Icon name="lucide:map-pin" class="w-4 h-4 shrink-0 mt-0.5" />
+            <span>{CONTACT.address}</span>
+          </p>
+        </div>
+
+        <div class="mt-6">
+          {
+            hasWhatsApp ? (
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-track="whatsapp"
+                class="float-contact inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-[#25D366] hover:brightness-95 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                Chat on WhatsApp
+              </a>
+            ) : (
+              <a
+                href="/rfq"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                Get Started
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-16 pt-8 border-t border-slate-800">
+      <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <p class="text-sm text-slate-400">
+          &copy; {new Date().getFullYear()} {SITE.author}. All rights reserved.
+        </p>
+        <div class="flex items-center space-x-6 text-sm">
+          <a href="/privacy" class="text-slate-400 hover:text-blue-400 transition-colors">
+            Privacy Policy
+          </a>
+          <span class="text-slate-700">•</span>
+          <a href="/terms" class="text-slate-400 hover:text-blue-400 transition-colors">
+            Terms of Service
+          </a>
+          <span class="text-slate-700">•</span>
+          <a href="/cookie-policy" class="text-slate-400 hover:text-blue-400 transition-colors">
+            Cookie Policy
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
