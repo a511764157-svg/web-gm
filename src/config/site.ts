@@ -8,7 +8,7 @@ export const SITE = {
   title: 'Precision Machinery Co., Ltd.',        // TODO: 厂家英文公司名
   description:
     'Custom CNC machining, sheet metal fabrication and casting parts manufacturer. ISO 9001 certified, ±0.01 mm precision, exporting to 50+ countries.', // TODO: 一句话简介
-  url: 'https://yourdomain.com',                  // TODO: 正式域名（影响 og:url 和分享卡片）
+  url: 'https://zzqwdz.fun',                      // 正式域名（影响 og:url 和分享卡片）
   author: 'Precision Machinery Co., Ltd.',        // TODO: 同公司名
   tagline: 'Custom Metal Parts, Built to Your Drawings', // TODO: 首屏副标题
   heroTitle: 'Custom Metal Parts,',                      // TODO: 首屏主标题第一行
@@ -26,7 +26,7 @@ export const SITE = {
 export const CONTACT = {
   phone: '+86-371-8888-8888',                     // TODO
   whatsapp: '8613800000000',                      // TODO: 纯数字，含国际区号，不要加 + 和空格
-  email: 'sales@yourdomain.com',                  // TODO: 必须用企业邮箱
+  email: 'sales@zzqwdz.fun',                      // TODO: 确认这个邮箱真实存在且能收信
   address: 'No.1 Industrial Park, Zhengzhou, Henan, China', // TODO
   telegram: '',                                   // 可选：俄罗斯/东欧/中东市场才需要，留空则不显示
 } as const;
