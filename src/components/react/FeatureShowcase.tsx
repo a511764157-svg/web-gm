@@ -1,49 +1,49 @@
 import { motion } from 'motion/react';
 import Icon from 'astro-iconset/react';
 
-import warehouseImg from '@assets/photo-1553413077-190dd305871c.jpg';
-import truckImg from '@assets/photo-1601584115197-04ecc0da31d7.jpg';
-import packageImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import barChart3Img from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import shieldImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
-import headphonesImg from '@assets/photo-1486312338219-ce68d2c6f44d.jpg';
+import cncImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
+import sheetMetalImg from '@assets/photo-1553413077-190dd305871c.jpg';
+import castingImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
+import finishingImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
+import inspectionImg from '@assets/photo-1486312338219-ce68d2c6f44d.jpg';
+import exportImg from '@assets/photo-1451187580459-43490279c0fa.jpg';
 
 const features = [
   {
-    icon: 'lucide:warehouse',
-    title: 'Advanced Warehousing',
-    description: 'Climate-controlled facilities with automated inventory systems and 24/7 security.',
-    image: warehouseImg,
+    icon: 'lucide:cog',
+    title: 'CNC Machining',
+    description: 'Turning, milling and drilling on 3-axis and 4-axis machining centres, held to ±0.01 mm.',
+    image: cncImg,
   },
   {
-    icon: 'lucide:truck',
-    title: 'Fast Transportation',
-    description: 'Multi-modal logistics network ensuring rapid delivery across all destinations.',
-    image: truckImg,
+    icon: 'lucide:layers',
+    title: 'Sheet Metal Fabrication',
+    description: 'Laser cutting, bending and welding for enclosures, panels, brackets and frames.',
+    image: sheetMetalImg,
   },
   {
-    icon: 'lucide:package',
-    title: 'Quality Manufacturing',
-    description: 'ISO-certified production with precision engineering and quality control.',
-    image: packageImg,
+    icon: 'lucide:hammer',
+    title: 'Casting & Moulding',
+    description: 'Sand, die and investment casting for housings, covers and machine base parts.',
+    image: castingImg,
   },
   {
-    icon: 'lucide:bar-chart-3',
-    title: 'Real-Time Analytics',
-    description: 'Complete supply chain visibility with advanced tracking and reporting.',
-    image: barChart3Img,
+    icon: 'lucide:droplet',
+    title: 'Surface Finishing',
+    description: 'Anodising, powder coating, plating and heat treatment for wear and corrosion resistance.',
+    image: finishingImg,
   },
   {
-    icon: 'lucide:shield',
-    title: 'Secure Operations',
-    description: 'Industry-leading security protocols protecting your valuable assets.',
-    image: shieldImg,
+    icon: 'lucide:shield-check',
+    title: 'Quality Inspection',
+    description: 'CMM and manual dimensional checks with inspection reports issued before shipment.',
+    image: inspectionImg,
   },
   {
-    icon: 'lucide:headphones',
-    title: '24/7 Support',
-    description: 'Dedicated teams available around the clock to ensure seamless operations.',
-    image: headphonesImg,
+    icon: 'lucide:globe',
+    title: 'Export Worldwide',
+    description: 'Parts shipped to customers in Europe, North America, the Middle East and Southeast Asia.',
+    image: exportImg,
   },
 ];
 
@@ -95,4 +95,3 @@ export default function FeatureShowcase() {
     </div>
   );
 }
-

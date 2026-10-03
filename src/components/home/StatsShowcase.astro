@@ -2,15 +2,16 @@
 import { Image } from 'astro:assets';
 import AnimatedStats from '../react/AnimatedStats';
 import { EXPORT_MARKETS } from '@config/site';
-import logisticsNetworkImg from '@assets/photo-1578575437130-527eed3abbec.jpg';
+import sectionBgImg from '@assets/photo-1578575437130-527eed3abbec.jpg';
 ---
 
 <section class="relative py-24 overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0">
+    <!-- 纯装饰性背景图，用空 alt，避免给无意义的描述 -->
     <Image 
-      src={logisticsNetworkImg}
-      alt="Global logistics network"
+      src={sectionBgImg}
+      alt=""
       class="w-full h-full object-cover"
       width={2070}
       height={1380}

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
-import warehouseBgImg from '@assets/photo-1553413077-190dd305871c.jpg';
+import sectionBgImg from '@assets/photo-1553413077-190dd305871c.jpg';
 import { CONTACT, COMPANY } from '@config/site';
 
 const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent('Hello, I would like to request a quote.')}`;
@@ -11,9 +11,10 @@ const hasWhatsApp = Boolean(CONTACT.whatsapp && CONTACT.whatsapp !== '8613800000
 <section class="relative py-32 overflow-hidden">
   <!-- Background Image -->
   <div class="absolute inset-0">
+    <!-- 纯装饰性背景图，用空 alt，避免给无意义的描述 -->
     <Image 
-      src={warehouseBgImg}
-      alt="Modern warehouse operations"
+      src={sectionBgImg}
+      alt=""
       class="w-full h-full object-cover"
       width={2070}
       height={1380}
@@ -75,7 +76,7 @@ const hasWhatsApp = Boolean(CONTACT.whatsapp && CONTACT.whatsapp !== '8613800000
       <!-- Trust indicators -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
         <div class="backdrop-blur-sm bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-white/30 group">
-          <div class="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">25+</div>
+          <div class="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">{COMPANY.years}</div>
           <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Years Experience</div>
         </div>
         <div class="backdrop-blur-sm bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-white/30 group">
@@ -83,12 +84,12 @@ const hasWhatsApp = Boolean(CONTACT.whatsapp && CONTACT.whatsapp !== '8613800000
           <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Certified</div>
         </div>
         <div class="backdrop-blur-sm bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-white/30 group">
-          <div class="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">24/7</div>
-          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Support</div>
+          <div class="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">{COMPANY.precision}</div>
+          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Machining Precision</div>
         </div>
         <div class="backdrop-blur-sm bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-all border border-white/10 hover:border-white/30 group">
-          <div class="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">Global</div>
-          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Network</div>
+          <div class="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200">{COMPANY.countries}</div>
+          <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Countries Served</div>
         </div>
       </div>
     </div>

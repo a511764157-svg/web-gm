@@ -6,7 +6,8 @@ import RFQForm from '@components/react/RFQForm';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-iconset/components';
 import rfqBgImg from '@assets/photo-1558618666-fcd25c85cd64.jpg';
-import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
+import { COMPANY } from '@config/site';
+import showcaseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
 ---
 
 <BaseLayout title="Request a Quote - Get Started Today">
@@ -16,7 +17,7 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
     <div class="absolute inset-0">
       <Image 
         src={rfqBgImg}
-        alt="Professional logistics and supply chain management"
+        alt=""
         class="w-full h-full object-cover"
         width={2070}
         height={1380}
@@ -37,8 +38,8 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
         </h1>
         
         <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp" style="animation-delay: 0.2s">
-          Get a customized quote tailored to your specific logistics and manufacturing needs. 
-          We typically respond within 24 hours with a comprehensive proposal.
+          Send us your drawings and requirements — we reply with pricing, lead time and
+          machining feedback within 24 hours.
         </p>
 
         <!-- Quick Stats -->
@@ -48,16 +49,16 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
             <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Response Time</div>
           </div>
           <div class="group">
-            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">500+</div>
-            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Happy Clients</div>
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">{COMPANY.countries}</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Countries Served</div>
           </div>
           <div class="group">
-            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">99.9%</div>
-            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">On-Time Rate</div>
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">{COMPANY.precision}</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Machining Precision</div>
           </div>
           <div class="group">
-            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">15+</div>
-            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Facilities</div>
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">{COMPANY.machines}</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Machines</div>
           </div>
         </div>
       </div>
@@ -161,7 +162,7 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
               <span class="shrink-0 w-8 h-8 rounded-full bg-linear-to-br from-purple-600 to-purple-700 text-white flex items-center justify-center font-bold text-sm shadow-md">4</span>
               <div>
                 <span class="text-gray-900 font-semibold block">Partnership</span>
-                <span class="text-gray-600">Begin your logistics journey with us</span>
+                <span class="text-gray-600">Ongoing production and repeat orders</span>
               </div>
             </li>
           </ol>
@@ -216,7 +217,7 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
         Join Hundreds of <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Successful Companies</span>
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        We've helped companies of all sizes streamline their logistics and manufacturing operations.
+        Machine builders, equipment makers and distributors rely on us for custom metal parts.
       </p>
     </div>
 
@@ -259,8 +260,8 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
       <div class="absolute inset-0">
         <Image 
-          src={warehouseImg}
-          alt="Modern warehouse facility with advanced logistics technology"
+          src={showcaseImg}
+          alt=""
           class="w-full h-full object-cover"
           width={2070}
           height={800}
@@ -269,7 +270,7 @@ import warehouseImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
       </div>
       <div class="relative z-10 p-12 md:p-16 text-center text-white">
         <h3 class="text-3xl md:text-4xl font-bold mb-4">
-          Ready to Transform Your Supply Chain?
+          Ready to Get Your Parts Made?
         </h3>
         <p class="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
           Get started today with a customized quote that fits your unique business needs.
