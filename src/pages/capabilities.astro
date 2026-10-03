@@ -6,119 +6,169 @@ import Button from '../components/ui/Button.astro';
 import CapabilityAccordion from '../components/react/CapabilityAccordion';
 import { Image } from 'astro:assets';
 import ImageReveal from '../components/react/ImageReveal';
-import { SITE } from '../config/site';
+import { SITE, COMPANY } from '../config/site';
 
-import warehouseImg from '@assets/photo-1566576721346-d4a3b4eaeb55.jpg';
-import manufacturingImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import transportationImg from '@assets/photo-1601584115197-04ecc0da31d7.jpg';
-import supplyChainImg from '@assets/photo-1460925895917-afdab827c52f.jpg';
-import valueAddedServicesImg from '@assets/photo-1558618666-fcd25c85cd64.jpg';
-import technologyIntegrationImg from '@assets/photo-1558494949-ef010cbdcc31.jpg';
-import heroBgImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+import cncImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
+import manualImg from '@assets/photo-1558618666-fcd25c85cd64.jpg';
+import sheetMetalImg from '@assets/photo-1565043589221-1a6fd9ae45c7.jpg';
+import castingImg from '@assets/photo-1518770660439-4636190af475.jpg';
+import finishingImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+import qualityImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
+import heroBgImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
 import ctaBgImg from '@assets/photo-1553413077-190dd305871c.jpg';
 
 const capabilities = [
   {
-    title: 'Warehousing & Storage',
-    description: 'State-of-the-art warehousing facilities equipped with advanced inventory management systems, climate control, and 24/7 security.',
+    title: 'CNC Machining',
+    description: `3-axis and 4-axis machining centres for turned and milled parts, holding ${COMPANY.precision} on critical dimensions. Aluminium, stainless steel, brass, carbon steel and engineering plastics.`,
     icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" />
     </svg>`,
-    image: warehouseImg,
+    image: cncImg,
     features: [
-      'Climate-controlled storage',
-      'Automated inventory tracking',
-      'Cross-docking capabilities',
-      'Hazmat certified facilities',
-      'Real-time stock visibility'
+      'CNC turning, milling & drilling',
+      '3-axis and 4-axis machining centres',
+      'Tolerances down to ±0.01 mm',
+      'Aluminium, stainless steel, brass, carbon steel',
+      'Prototype (1 pc) to volume production'
     ]
   },
   {
-    title: 'Manufacturing Services',
-    description: 'ISO 9001 certified manufacturing with precision engineering, quality control, and flexible production capabilities.',
+    title: 'Precision Machining & Fabrication',
+    description: 'Skilled machinists, welding and assembly for custom metal parts, brackets, frames and machined components built to your drawings.',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a1 1 0 112 0v7h1.5a1 1 0 010 2H13v7a1 1 0 11-2 0v-7H9.5a1 1 0 010-2H11V4z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 20h16" />
+    </svg>`,
+    image: manualImg,
+    features: [
+      'Manual turning, milling & drilling',
+      'MIG / TIG / spot welding',
+      'Custom brackets, frames & fixtures',
+      'Sub-assembly & kitting',
+      'Drawing-based one-off production'
+    ]
+  },
+  {
+    title: 'Sheet Metal Fabrication',
+    description: 'Cutting, forming and fabrication of sheet metal parts — enclosures, panels, housings and cladding in steel, aluminium and stainless steel.',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6v12M20 6v12" />
+    </svg>`,
+    image: sheetMetalImg,
+    features: [
+      'Laser cutting & shearing',
+      'Press brake bending & forming',
+      'Sheet metal enclosures & panels',
+      'Stainless steel, aluminium, carbon steel',
+      'Punching, notching & deburring'
+    ]
+  },
+  {
+    title: 'Casting & Moulded Components',
+    description: 'Sand casting, die casting and investment casting for housings, brackets, covers and machine base parts, supplied raw or fully machined.',
     icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
     </svg>`,
-    image: manufacturingImg,
+    image: castingImg,
     features: [
-      'CNC machining & fabrication',
-      'Assembly & kitting',
-      'Quality inspection',
-      'Prototype development',
-      'Custom tooling & fixtures'
+      'Sand casting, die casting & investment casting',
+      'Aluminium, zinc, brass & cast iron',
+      'Housings, brackets, covers & base plates',
+      'Pattern & mould development',
+      'Cast-then-machined supply option'
     ]
   },
   {
-    title: 'Transportation & Distribution',
-    description: 'Comprehensive multi-modal transportation network ensuring efficient, reliable delivery across all regions.',
+    title: 'Surface Finishing & Treatment',
+    description: 'Anodising, powder coating, plating and treatment options for corrosion resistance, wear resistance and a clean finished appearance.',
     icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3s6 6.5 6 10.5a6 6 0 11-12 0C6 9.5 12 3 12 3z" />
     </svg>`,
-    image: transportationImg,
+    image: finishingImg,
     features: [
-      'Ground transportation (LTL/FTL)',
-      'Air freight services',
-      'Ocean freight',
-      'Last-mile delivery',
-      'Route optimization'
+      'Anodising (clear, black, colour)',
+      'Powder coating & wet painting',
+      'Zinc / nickel plating',
+      'Heat treatment & hardening',
+      'Passivation, polishing & brushing'
     ]
   },
   {
-    title: 'Supply Chain Management',
-    description: 'End-to-end supply chain solutions with advanced analytics, forecasting, and optimization capabilities.',
+    title: 'Quality Control & Inspection',
+    description: 'Dimensional inspection and documentation on every batch, with third-party reports available on request before shipment.',
     icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>`,
-    image: supplyChainImg,
+    image: qualityImg,
     features: [
-      'Demand forecasting',
-      'Inventory optimization',
-      'Network design',
-      'Risk management',
-      'Performance analytics'
+      'CMM & manual dimensional inspection',
+      'First-article & batch inspection',
+      'Material certificates & traceability',
+      'Pre-shipment inspection reports',
+      'ISO 9001 quality management'
     ]
+  }
+];
+
+// ---- 设备清单（B2B 买家看设备型号来判断工厂真实产能）----
+const equipment = [
+  { name: 'CNC Vertical Machining Centres', spec: '3-axis / 4-axis', qty: COMPANY.machines },
+  { name: 'CNC Turning Centres', spec: 'Ø 5 – 400 mm', qty: '12' },
+  { name: 'Manual Lathes & Milling Machines', spec: 'Conventional', qty: '10' },
+  { name: 'Fiber Laser Cutting Machine', spec: '3,000 × 1,500 mm bed', qty: '2' },
+  { name: 'CNC Press Brake', spec: 'Up to 200 T', qty: '4' },
+  { name: 'MIG / TIG Welding Stations', spec: 'Steel, aluminium', qty: '8' },
+  { name: 'CMM Inspection Machine', spec: '0.001 mm resolution', qty: '1' },
+  { name: 'Surface Treatment Line', spec: 'Anodising / powder coat', qty: '1' }
+];
+
+const processSteps = [
+  {
+    step: '01',
+    title: 'Send Your Drawing',
+    description: 'Share your 2D drawings or 3D files (STEP / IGES / DWG / PDF) with material, tolerance and surface finish requirements.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>`
   },
   {
-    title: 'Value-Added Services',
-    description: 'Comprehensive value-added services to enhance your product offerings and streamline operations.',
-    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-    </svg>`,
-    image: valueAddedServicesImg,
-    features: [
-      'Product labeling & packaging',
-      'Returns management',
-      'Quality inspection',
-      'Kit assembly',
-      'Custom packaging design'
-    ]
+    step: '02',
+    title: 'Quote & DFM Feedback',
+    description: `Engineering review of your drawing with cost-saving suggestions. Quotation and lead time sent within ${COMPANY.response}.`,
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+    </svg>`
   },
   {
-    title: 'Technology & Integration',
-    description: 'Advanced technology platform with seamless integration capabilities for complete visibility and control.',
-    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>`,
-    image: technologyIntegrationImg,
-    features: [
-      'WMS & TMS integration',
-      'EDI & API connectivity',
-      'Real-time tracking',
-      'Automated reporting',
-      'Mobile applications'
-    ]
+    step: '03',
+    title: 'Sample & Production',
+    description: 'Sample or first-article part for your approval, then serial production with in-process inspection on every batch.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>`
+  },
+  {
+    step: '04',
+    title: 'Inspection & Shipping',
+    description: 'Final inspection report, protective packing for sea or air freight, and shipment booked to your port or forwarder.',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
   }
 ];
 ---
 
-<BaseLayout title={`Our Capabilities - ${SITE.title}`}>
+<BaseLayout title={`Machining Capabilities - ${SITE.title}`}>
   <!-- Hero Section -->
   <section class="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
-      <Image 
+      <Image
         src={heroBgImg}
-        alt="Modern logistics and manufacturing capabilities"
+        alt="CNC machining workshop"
         class="w-full h-full object-cover"
         width={2070}
         height={1380}
@@ -133,19 +183,19 @@ const capabilities = [
           <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
           </svg>
-          Comprehensive Solutions
+          ISO 9001 Certified · Since {COMPANY.founded}
         </div>
-        
+
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          Our <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400">
+          Machining <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400">
             Capabilities
           </span>
-      </h1>
-        
+        </h1>
+
         <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-        Comprehensive logistics and manufacturing solutions designed to optimize your operations 
-        and drive sustainable growth.
-      </p>
+          CNC machining, sheet metal fabrication, casting and surface finishing —
+          custom metal parts built to your drawings and shipped worldwide.
+        </p>
       </div>
     </div>
   </section>
@@ -156,7 +206,7 @@ const capabilities = [
     <div class="lg:hidden mb-12">
       <CapabilityAccordion capabilities={capabilities} client:load />
     </div>
-    
+
     <!-- Grid View for Desktop -->
     <div class="hidden lg:block space-y-24">
       {capabilities.map((capability, index) => (
@@ -185,7 +235,7 @@ const capabilities = [
           <div class={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
             <ImageReveal client:load delay={index * 0.1}>
               <div class="relative aspect-4/3 group overflow-hidden rounded-2xl shadow-2xl">
-                <Image 
+                <Image
                   src={capability.image}
                   alt={capability.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -205,55 +255,63 @@ const capabilities = [
     </div>
   </Section>
 
-  <!-- Process Section -->
+  <!-- Equipment List -->
   <Section background="white">
     <div class="text-center mb-16">
-      <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
-        Our Approach
+      <div class="inline-block px-4 py-2 mb-4 bg-teal-100 text-teal-800 text-sm font-semibold rounded-full">
+        Machine List
       </div>
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-        Our <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Process</span>
+        Our <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Equipment</span>
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        A streamlined approach to deliver exceptional results every time.
+        {COMPANY.machines} machines across a {COMPANY.area} workshop — the equipment your parts
+        will actually be made on.
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+      <table class="w-full text-left">
+        <thead class="bg-slate-900 text-white">
+          <tr>
+            <th class="px-6 py-4 text-sm font-semibold uppercase tracking-wider">Equipment</th>
+            <th class="px-6 py-4 text-sm font-semibold uppercase tracking-wider">Specification</th>
+            <th class="px-6 py-4 text-sm font-semibold uppercase tracking-wider text-right">Qty</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 bg-white">
+          {equipment.map((item) => (
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="px-6 py-4 font-medium text-gray-900">{item.name}</td>
+              <td class="px-6 py-4 text-gray-600">{item.spec}</td>
+              <td class="px-6 py-4 text-gray-900 font-semibold text-right">{item.qty}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-6">
+      Equipment list shown for reference. Full capacity details available on request.
+    </p>
+  </Section>
+
+  <!-- Process Section -->
+  <Section background="gray">
+    <div class="text-center mb-16">
+      <div class="inline-block px-4 py-2 mb-4 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+        How We Work
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        From Drawing to <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Delivery</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        A straightforward four-step process — no middlemen, no surprises.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {[
-        { 
-          step: '01', 
-          title: 'Consultation', 
-          description: 'Understand your unique requirements and challenges',
-          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>`
-        },
-        { 
-          step: '02', 
-          title: 'Planning', 
-          description: 'Design customized solutions tailored to your needs',
-          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-          </svg>`
-        },
-        { 
-          step: '03', 
-          title: 'Implementation', 
-          description: 'Execute with precision and attention to detail',
-          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>`
-        },
-        { 
-          step: '04', 
-          title: 'Optimization', 
-          description: 'Continuous improvement and performance monitoring',
-          icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg>`
-        }
-      ].map((process, index) => (
+      {processSteps.map((process, index) => (
         <Card hover class="text-center animate-fadeInUp group" style={`animation-delay: ${index * 0.1}s`}>
           <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-xl bg-linear-to-br from-blue-500 to-teal-500 text-white shadow-lg group-hover:scale-110 transition-transform">
             <div set:html={process.icon} />
@@ -270,9 +328,9 @@ const capabilities = [
   <section class="relative py-32 overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
-      <Image 
+      <Image
         src={ctaBgImg}
-        alt="Modern warehouse operations"
+        alt="Factory workshop"
         class="w-full h-full object-cover"
         width={2070}
         height={1380}
@@ -287,22 +345,22 @@ const capabilities = [
           Get Started Today
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Ready to Work with <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-teal-400">Our Team</span>?
-      </h2>
+          Send Your Drawing, <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-teal-400">Get a Quote</span>
+        </h2>
         <p class="text-xl md:text-2xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Let's discuss how our capabilities can transform your business and accelerate your growth.
-      </p>
-        
+          Tell us the material, tolerance and quantity — our engineers reply with pricing
+          and lead time within {COMPANY.response}.
+        </p>
+
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <Button href="/rfq" size="lg" class="bg-blue-600! hover:bg-blue-700! text-white! shadow-2xl!">
           Request a Quote
         </Button>
-          <Button href="/facilities" size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!">
-          View Facilities
+          <Button href="/" size="lg" variant="outline" class="border-2! border-white! text-white! hover:bg-white/10! shadow-2xl!">
+          Back to Home
         </Button>
         </div>
       </div>
     </div>
   </section>
 </BaseLayout>
-

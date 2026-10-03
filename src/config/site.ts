@@ -84,12 +84,10 @@ export const TRACKING = {
 } as const;
 
 // ---- 导航 ----
+// 信任背书页：导航越短越像真工厂官网，不要往回加页面
 export const NAVIGATION = [
   { name: 'Home', href: '/' },
   { name: 'Capabilities', href: '/capabilities' },
-  { name: 'Industries', href: '/use-cases' },
-  { name: 'Facilities', href: '/facilities' },
-  { name: 'Downloads', href: '/documentation' },
   { name: 'Contact', href: '/rfq' },
 ] as const;
 
