@@ -109,7 +109,7 @@ export default function RFQForm() {
         <h2 className="mb-3 text-2xl font-bold text-gray-900">Talk to Our Engineers</h2>
         <p className="mb-8 text-gray-600 leading-relaxed">
           Tell us your extinguisher type, cylinder size and target output. Our engineering team
-          replies with a line plan and pricing within 24 hours.
+          replies with a line plan and pricing within {COMPANY.responseHours} hours.
         </p>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -220,8 +220,8 @@ export default function RFQForm() {
         </div>
         <h2 className="mb-2 text-2xl font-bold text-gray-900">Request Received</h2>
         <p className="text-gray-700">
-          Thank you. Our engineering team will reply within 24 hours with DFM feedback and a
-          quotation.
+          Thank you. Our engineering team will reply within {COMPANY.responseHours} hours with
+          equipment selection advice and a quotation.
         </p>
         {hasWhatsApp && (
           <a
@@ -263,7 +263,8 @@ export default function RFQForm() {
       <div>
         <h2 className="mb-1 text-2xl font-bold text-gray-900">Request a Quote</h2>
         <p className="text-sm text-gray-600">
-          Tell us your target output — we reply within 24 hours with equipment selection and pricing.
+          Tell us your target output — we reply within {COMPANY.responseHours} hours with equipment
+          selection and pricing.
         </p>
       </div>
 

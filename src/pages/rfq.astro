@@ -45,7 +45,7 @@ const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
         
         <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-fadeInUp" style="animation-delay: 0.2s">
           Tell us the extinguisher type, cylinder size and target output — we reply with
-          equipment selection, pricing and lead time within 24 hours.
+          equipment selection, pricing and lead time within {COMPANY.responseHours} hours.
         </p>
 
         <!-- Quick Stats -->
@@ -106,7 +106,7 @@ const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
               <div>
                 <a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`} class="font-semibold text-gray-900 hover:text-blue-700 transition-colors">Phone</a>
                 <div class="text-gray-600 font-medium">{CONTACT.phone}</div>
-                <div class="text-gray-500 text-xs">Mon–Sat, 08:00–18:00 (GMT+8)</div>
+                <div class="text-gray-500 text-xs">{CONTACT.hours} · {CONTACT.timezone}</div>
               </div>
             </div>
 
@@ -139,8 +139,8 @@ const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
                 </div>
                 <div>
                   <div class="font-semibold text-gray-900">Working Hours</div>
-                  <div class="text-gray-600 font-medium">Mon–Sat, 08:00–18:00</div>
-                  <div class="text-gray-500 text-xs">China Standard Time (GMT+8)</div>
+                  <div class="text-gray-600 font-medium">{CONTACT.hours}</div>
+                  <div class="text-gray-500 text-xs">{CONTACT.timezone}</div>
                 </div>
               </div>
             )}
@@ -160,7 +160,7 @@ const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
               <span class="shrink-0 w-8 h-8 rounded-full bg-linear-to-br from-blue-600 to-blue-700 text-white flex items-center justify-center font-bold text-sm shadow-md">1</span>
               <div>
                 <span class="text-gray-900 font-semibold block">Response</span>
-                <span class="text-gray-600">We'll review your request within 24 hours</span>
+                <span class="text-gray-600">We'll review your request within {COMPANY.responseHours} hours</span>
               </div>
             </li>
             <li class="flex items-start space-x-3 p-3 bg-white rounded-lg hover:shadow-md transition-shadow">

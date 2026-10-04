@@ -28,6 +28,8 @@ export const CONTACT = {
   whatsapp: '8617634872119',                      // 与手机号一致；若留 8613800000000，全站 WhatsApp 入口会自动隐藏
   email: '200896215@qq.com',                      // 客户官网公开邮箱
   address: 'Xiaodong Industrial Zone, Wuzhi County, Jiaozuo, Henan, China',
+  hours: 'Mon–Sat, 08:00–18:00',                  // 工作时间（页脚 / 询盘页卡片共用）
+  timezone: 'China Standard Time (GMT+8)',        // 时区说明，跟在 hours 后面
   telegram: '',                                   // 可选：俄罗斯/东欧/中东市场才需要，留空则不显示
 } as const;
 
@@ -38,7 +40,8 @@ export const COMPANY = {
   countries: '5+',                                // 韩国 / 印尼 / 菲律宾 / 越南 / 埃塞俄比亚
   patents: '160+',                                // 专利总数（其中发明 3 项，每年新增 30+）
   precision: '±1% Fill',                          // 灌装精度（灭火器灌装的关键指标）
-  response: '24h',                                // 报价响应时限
+  response: '24h',                                // 报价响应时限（数字条等短标签用）
+  responseHours: '24',                            // 同一个数字，句子里用：within {responseHours} hours
   area: '2,000 m²',                               // 厂房面积
   staff: '40+',                                   // 员工数
   machines: '34',                                 // 产品型号数（生产设备 18 + 维修设备 16）
