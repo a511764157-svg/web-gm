@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import Icon from 'astro-iconset/react';
-import { FORMS, CONTACT } from '../../config/site';
+import { FORMS, CONTACT, COMPANY } from '../../config/site';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 const endpoint = FORMS.rfqEndpoint;
+const accessKey = FORMS.accessKey;
+// 端点或 access key 任一为空 → 降级为 WhatsApp / 邮箱卡片
+const hasForm = Boolean(endpoint && accessKey);
 const waHref = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
   'Hello, I found your website and I would like to request a quote.'
 )}`;
@@ -28,7 +31,7 @@ export default function RFQForm() {
   const [status, setStatus] = useState<Status>('idle');
 
   // 未配置提交端点时只给 WhatsApp / 邮箱入口（配合 FB Instant Forms 的默认策略）
-  if (!endpoint) {
+  if (!hasForm) {
     return (
       <div className="rounded-2xl border-2 border-gray-100 bg-white p-8 text-center shadow-lg">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#25D366]/10">
@@ -123,6 +126,20 @@ export default function RFQForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6" name="rfq-form">
+      {/* Web3Forms 必需字段 */}
+      <input type="hidden" name="access_key" value={accessKey} />
+      <input type="hidden" name="subject" value="New RFQ from website" />
+      <input type="hidden" name="from_name" value={COMPANY.name} />
+      {/* 蜜罐字段：真人看不见，机器人会勾选 → 被 Web3Forms 判为垃圾提交 */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        style={{ display: 'none' }}
+        tabIndex={-1}
+        autoComplete="off"
+      />
+
       <div>
         <h2 className="mb-1 text-2xl font-bold text-gray-900">Request a Quote</h2>
         <p className="text-sm text-gray-600">
@@ -165,19 +182,29 @@ export default function RFQForm() {
         />
       </div>
 
-      <div>
-        <label htmlFor="drawing" className={labelClass}>
-          Drawing or 3D model <span className="font-normal text-gray-400">(optional)</span>
-        </label>
-        <input
-          id="drawing"
-          name="drawing"
-          type="file"
-          accept=".pdf,.step,.stp,.igs,.iges,.x_t,.dxf,.dwg,.jpg,.jpeg,.png"
-          className="w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700"
-        />
-        <p className="mt-2 text-xs text-gray-500">STEP · STP · IGS · X_T · PDF · DXF</p>
-      </div>
+      {FORMS.allowFileUpload ? (
+        <div>
+          <label htmlFor="drawing" className={labelClass}>
+            Drawing or 3D model <span className="font-normal text-gray-400">(optional)</span>
+          </label>
+          <input
+            id="drawing"
+            name="drawing"
+            type="file"
+            accept=".pdf,.step,.stp,.igs,.iges,.x_t,.dxf,.dwg,.jpg,.jpeg,.png"
+            className="w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2.5 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700"
+          />
+          <p className="mt-2 text-xs text-gray-500">STEP · STP · IGS · X_T · PDF · DXF</p>
+        </div>
+      ) : (
+        <div className="rounded-lg border-2 border-dashed border-gray-200 bg-gray-50 p-4">
+          <p className="text-sm font-semibold text-gray-700">Sending drawings?</p>
+          <p className="mt-1 text-xs leading-relaxed text-gray-500">
+            After submitting, send your STEP · STP · IGS · X_T · PDF · DXF files by WhatsApp or
+            email — we quote faster with drawings in hand.
+          </p>
+        </div>
+      )}
 
       <button
         type="submit"

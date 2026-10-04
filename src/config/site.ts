@@ -73,7 +73,18 @@ export const CERTIFICATIONS = [
 // 留空则用 WhatsApp 作为唯一入口（配合 FB Instant Forms 时推荐）
 // 填写 Formspree 地址则启用官网表单：https://formspree.io/f/xxxxxxxx
 export const FORMS = {
-  rfqEndpoint: 'https://formspree.io/f/REPLACE_ME', // TODO: 换成真实 Formspree 地址，否则表单提交会失败
+  // Web3Forms —— 无后端表单服务，提交后直接转发到注册邮箱
+  // 提交地址固定，不需要改；要换服务商时才动
+  rfqEndpoint: 'https://api.web3forms.com/submit',
+
+  // TODO: 填 Web3Forms Dashboard 里的 Access Key（形如 6f2a1b3c-.... 的 UUID）
+  // 留空 = 询盘页表单整体不渲染，自动降级成 WhatsApp / 邮箱卡片
+  accessKey: '',
+
+  // Web3Forms 免费版不支持文件上传（Pro 才有，5MB/文件）。
+  // false 时不渲染图纸上传框，改为提示客户提交后用 WhatsApp 发图纸 ——
+  // 否则免费版会静默吞掉文件，客户以为发了、工程师收不到，最危险。
+  allowFileUpload: false,
 } as const;
 
 // ---- 追踪代码 ----
