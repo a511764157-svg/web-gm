@@ -25,7 +25,7 @@ export const SITE = {
 // ---- 联系方式（社交流量的主要承接入口）----
 export const CONTACT = {
   phone: '+86-371-8888-8888',                     // TODO
-  whatsapp: '8613800000000',                      // TODO: 纯数字，含国际区号，不要加 + 和空格
+  whatsapp: '8613800138000',                      // TODO: 换成真实号码（纯数字含区号）。若留 8613800000000，全站 WhatsApp 入口会自动隐藏
   email: 'sales@zzqwdz.fun',                      // TODO: 确认这个邮箱真实存在且能收信
   address: 'No.1 Industrial Park, Zhengzhou, Henan, China', // TODO
   telegram: '',                                   // 可选：俄罗斯/东欧/中东市场才需要，留空则不显示
@@ -73,7 +73,7 @@ export const CERTIFICATIONS = [
 // 留空则用 WhatsApp 作为唯一入口（配合 FB Instant Forms 时推荐）
 // 填写 Formspree 地址则启用官网表单：https://formspree.io/f/xxxxxxxx
 export const FORMS = {
-  rfqEndpoint: '',                                // TODO: 留空 = 隐藏官网表单，只留 WhatsApp
+  rfqEndpoint: 'https://formspree.io/f/REPLACE_ME', // TODO: 换成真实 Formspree 地址，否则表单提交会失败
 } as const;
 
 // ---- 追踪代码 ----
