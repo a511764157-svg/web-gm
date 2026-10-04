@@ -1,11 +1,11 @@
 ---
 import ImageReveal from '@components/react/ImageReveal';
 import { Image } from 'astro:assets';
-import workshopImg from '@assets/photo-1566576721346-d4a3b4eaeb55.jpg';
-import machiningImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import turningImg from '@assets/photo-1558618666-fcd25c85cd64.jpg';
-import inspectionImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import dispatchImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
+import workshopImg from '@assets/gb/product-filling-4.jpg';
+import machiningImg from '@assets/gb/workshop-production.jpg';
+import turningImg from '@assets/gb/product-filling-4line.jpg';
+import inspectionImg from '@assets/gb/machine-test-unit.jpg';
+import dispatchImg from '@assets/gb/workshop-assembly.jpg';
 ---
 
 <section class="py-24 bg-white">
@@ -18,8 +18,8 @@ import dispatchImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
         Real <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-600">Production Floor</span>
       </h2>
       <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        Machining centres, inspection equipment and assembly lines — the facility your parts
-        will actually be made in.
+        Filling lines, leak test stations and printing units — built, assembled and test-run
+        on our own floor before shipment.
       </p>
     </div>
 
@@ -30,15 +30,15 @@ import dispatchImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
           <div class="relative h-full group overflow-hidden rounded-2xl shadow-xl">
             <Image 
               src={workshopImg}
-              alt="Machining workshop floor"
+              alt="Four-station dry powder filling machine"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               width={1200}
               height={800}
             />
             <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
-              <h3 class="text-2xl font-bold mb-2">Assembly Workshop</h3>
-              <p class="text-gray-200">Filling lines, testing stations and printing units assembled on one floor</p>
+              <h3 class="text-2xl font-bold mb-2">Line Assembly</h3>
+              <p class="text-gray-200">Filling heads, conveyors and control cabinets assembled and wired in-house</p>
             </div>
           </div>
         </ImageReveal>
@@ -65,15 +65,15 @@ import dispatchImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
         <div class="relative h-64 lg:h-auto group overflow-hidden rounded-2xl shadow-xl">
             <Image 
               src={machiningImg}
-              alt="Engineer commissioning a filling line"
+              alt="Production floor with extinguisher cylinders on the line"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               width={800}
               height={600}
             />
             <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <h3 class="text-xl font-bold mb-1">In-house Engineering</h3>
-              <p class="text-sm text-gray-200">Automation engineers who design the line, not just assemble it</p>
+              <h3 class="text-xl font-bold mb-1">On the Production Floor</h3>
+              <p class="text-sm text-gray-200">Lines running with real cylinders — not a showroom mock-up</p>
             </div>
         </div>
       </ImageReveal>
@@ -83,15 +83,15 @@ import dispatchImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
           <div class="lg:col-span-2 relative h-64 lg:h-auto group overflow-hidden rounded-2xl shadow-xl">
             <Image 
               src={inspectionImg}
-              alt="Dimensional inspection and measurement"
+              alt="Leak and pressure testing station"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               width={1200}
               height={600}
             />
             <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <h3 class="text-xl font-bold mb-1">Inspection & Reporting</h3>
-              <p class="text-sm text-gray-200">Dimensional checks documented before every shipment</p>
+              <h3 class="text-xl font-bold mb-1">Test Before Shipment</h3>
+              <p class="text-sm text-gray-200">Every line is test-run with your cylinders before it is packed</p>
             </div>
           </div>
         </ImageReveal>
@@ -101,15 +101,15 @@ import dispatchImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
           <div class="relative h-64 lg:h-auto group overflow-hidden rounded-2xl shadow-xl">
             <Image 
               src={dispatchImg}
-              alt="Packed parts ready for dispatch"
+              alt="Assembly workshop running at full capacity"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               width={800}
               height={600}
             />
             <div class="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <h3 class="text-xl font-bold mb-1">Packing & Dispatch</h3>
-              <p class="text-sm text-gray-200">Export packing for sea or air freight, booked to your forwarder</p>
+              <h3 class="text-xl font-bold mb-1">Volume Production</h3>
+              <p class="text-sm text-gray-200">Our own workshop running these lines, all day, every day</p>
             </div>
           </div>
         </ImageReveal>

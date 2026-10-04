@@ -8,14 +8,14 @@ import { Image } from 'astro:assets';
 import ImageReveal from '../components/react/ImageReveal';
 import { SITE, COMPANY } from '../config/site';
 
-import cncImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import manualImg from '@assets/photo-1558618666-fcd25c85cd64.jpg';
-import sheetMetalImg from '@assets/photo-1565043589221-1a6fd9ae45c7.jpg';
-import castingImg from '@assets/photo-1518770660439-4636190af475.jpg';
-import finishingImg from '@assets/photo-1586528116311-ad8dd3c8310d.jpg';
-import qualityImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import heroBgImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import ctaBgImg from '@assets/photo-1553413077-190dd305871c.jpg';
+import cncImg from '@assets/gb/product-filling-4line.jpg';
+import manualImg from '@assets/gb/machine-test-unit.jpg';
+import sheetMetalImg from '@assets/gb/product-labeling-line.jpg';
+import castingImg from '@assets/gb/product-body-welding.jpg';
+import finishingImg from '@assets/gb/machine-repair-unit.jpg';
+import qualityImg from '@assets/gb/banner-equipment-cluster.jpg';
+import heroBgImg from '@assets/gb/hero-printing.jpg';
+import ctaBgImg from '@assets/gb/hero-leak-test.jpg';
 
 const capabilities = [
   {
@@ -172,10 +172,10 @@ const processSteps = [
     <div class="absolute inset-0">
       <Image
         src={heroBgImg}
-        alt="Fire extinguisher production equipment workshop"
+        alt="Fire extinguisher production line in operation"
         class="w-full h-full object-cover"
-        width={2070}
-        height={1380}
+        width={1920}
+        height={960}
       />
       <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
     </div>
@@ -334,10 +334,10 @@ const processSteps = [
     <div class="absolute inset-0">
       <Image
         src={ctaBgImg}
-        alt="Equipment assembly workshop"
+        alt="Leak testing station on the production line"
         class="w-full h-full object-cover"
-        width={2070}
-        height={1380}
+        width={1920}
+        height={960}
       />
       <div class="absolute inset-0 bg-linear-to-r from-blue-900/95 to-teal-900/95"></div>
     </div>

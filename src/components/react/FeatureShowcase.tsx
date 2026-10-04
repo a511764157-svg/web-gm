@@ -1,12 +1,12 @@
 import { motion } from 'motion/react';
 import Icon from 'astro-iconset/react';
 
-import cncImg from '@assets/photo-1581091226825-a6a2a5aee158.jpg';
-import sheetMetalImg from '@assets/photo-1553413077-190dd305871c.jpg';
-import castingImg from '@assets/photo-1563013544-824ae1b704d3.jpg';
-import finishingImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import inspectionImg from '@assets/photo-1486312338219-ce68d2c6f44d.jpg';
-import exportImg from '@assets/photo-1451187580459-43490279c0fa.jpg';
+import cncImg from '@assets/gb/product-filling-4line.jpg';
+import sheetMetalImg from '@assets/gb/machine-test-unit.jpg';
+import castingImg from '@assets/gb/product-labeling-line.jpg';
+import finishingImg from '@assets/gb/product-body-welding.jpg';
+import inspectionImg from '@assets/gb/machine-repair-unit.jpg';
+import exportImg from '@assets/gb/product-filling-8station.jpg';
 
 const features = [
   {

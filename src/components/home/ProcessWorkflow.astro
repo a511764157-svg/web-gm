@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 
-import discoveryImg from '@assets/photo-1454165804606-c3d57bc86b40.jpg';
-import implementationImg from '@assets/photo-1522071820081-009f0129c71c.jpg';
-import optimizationImg from '@assets/photo-1551288049-bebda4e38f71.jpg';
-import supportGrowthImg from '@assets/photo-1552664730-d307ca884978.jpg';
+import discoveryImg from '@assets/gb/machine-filling-unit.jpg';
+import implementationImg from '@assets/gb/product-filling-8station.jpg';
+import optimizationImg from '@assets/gb/machine-test-unit.jpg';
+import supportGrowthImg from '@assets/gb/workshop-assembly.jpg';
 
 interface Step {
   number: number;
@@ -20,40 +20,40 @@ interface Step {
 const steps = [
   {
     number: 1,
-    title: "Discovery & Planning",
-    description: "We analyze your current operations, identify pain points, and design a customized solution that aligns with your business goals.",
+    title: "Requirement Study",
+    description: "Tell us your cylinder sizes, output per shift and workshop layout. We match the line configuration to your plant, not the other way round.",
     image: discoveryImg,
-    alt: "Business planning and strategy",
+    alt: "Filling unit with control panel",
     hoverBorder: "hover:border-blue-500",
     gradient: "from-blue-600/90",
     textColor: "text-blue-600"
   },
   {
     number: 2,
-    title: "Implementation",
-    description: "Our expert team sets up your infrastructure, integrates systems, and ensures seamless onboarding with minimal disruption.",
+    title: "Line Design & Build",
+    description: "Our engineers lay out the line, build the stations and wire the control system in our own workshop.",
     image: implementationImg,
-    alt: "Team collaboration and implementation",
+    alt: "Eight-station dry powder filling line",
     hoverBorder: "hover:border-teal-500",
     gradient: "from-teal-600/90",
     textColor: "text-teal-700"
   },
   {
     number: 3,
-    title: "Optimization",
-    description: "Continuous monitoring and data-driven improvements ensure your operations become more efficient and cost-effective over time.",
+    title: "Factory Test Run",
+    description: "The completed line is run with your cylinders and your powder. You get video, capacity figures and test data before it ships.",
     image: optimizationImg,
-    alt: "Data analytics and optimization",
+    alt: "Leak testing and quality check station",
     hoverBorder: "hover:border-blue-500",
     gradient: "from-blue-600/90",
     textColor: "text-blue-600"
   },
   {
     number: 4,
-    title: "Support & Growth",
-    description: "Dedicated account management and 24/7 support help you scale operations and adapt to changing market demands.",
+    title: "Installation & Training",
+    description: "Engineers travel to commission the line on site and train your operators. Spare parts and remote support continue after that.",
     image: supportGrowthImg,
-    alt: "Customer support and growth",
+    alt: "Assembly workshop with operators on the line",
     hoverBorder: "hover:border-teal-500",
     gradient: "from-teal-600/90",
     textColor: "text-teal-700"
