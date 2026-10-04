@@ -78,6 +78,15 @@ export default function RFQForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // 本表单只有一个 contact 字段（邮箱或 WhatsApp 号都能填），而 Web3Forms
+    // 是靠 email / replyto 字段来设置「回复到」的。所以判断一下：
+    // 填的内容像邮箱就补一个 replyto，这样邮件里点「回复」能直接回给客户。
+    // 填的是电话号码就不设，避免把无效邮箱塞给 Web3Forms。
+    const contact = String(formData.get('contact') ?? '').trim();
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact)) {
+      formData.append('replyto', contact);
+    }
+
     setStatus('submitting');
     trackLead();
 
