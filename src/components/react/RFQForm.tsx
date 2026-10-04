@@ -283,7 +283,7 @@ export default function RFQForm() {
           name="contact"
           type="text"
           required
-          placeholder="you@company.com  or  +1 234 567 8900"
+          placeholder="you@company.com  or  +86 138 0000 0000"
           className={inputClass}
         />
       </div>
