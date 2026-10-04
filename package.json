@@ -23,5 +23,8 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.147.0"
   }
 }

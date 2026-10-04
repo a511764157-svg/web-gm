@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers 静态资源部署配置
+  // 本项目是纯静态站（astro build -> dist/），无服务端逻辑，故不设 main 入口，
+  // 只声明 assets 目录，由 Cloudflare 直接托管 dist/ 里的 HTML/CSS/图片。
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "web-gm",
+  "compatibility_date": "2026-10-04",
+  "assets": {
+    "directory": "./dist"
+  }
+}
