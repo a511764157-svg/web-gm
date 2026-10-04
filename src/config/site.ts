@@ -84,6 +84,23 @@ export const FORMS = {
   // false 时不渲染图纸上传框，改为提示客户提交后用 WhatsApp 发图纸 ——
   // 否则免费版会静默吞掉文件，客户以为发了、工程师收不到，最危险。
   allowFileUpload: false,
+
+  // Cloudflare Turnstile 的 Site Key（公开的一半，放前端没问题）。
+  // 留空 = 不启用，表单照常工作。
+  //
+  // 为什么需要它：access_key 本来就公开在前端，别人不用打开网站，
+  // 直接 curl 提交端点就能把额度刷光 —— 免费 250 和付费 10k 都一样扛不住。
+  // Turnstile 是目前唯一能真正堵住这个洞、又不用自己搭后端的办法：
+  // token 由 Cloudflare 签发（一次性、5 分钟有效），攻击者伪造不出来。
+  //
+  // 启用步骤（需要 Web3Forms 付费档，这是它的 Pro 功能）：
+  //   1. Cloudflare Dashboard → Turnstile → 建 widget，模式选 Managed，
+  //      把正式域名加进 Hostname
+  //   2. 复制 Site Key 填到这儿；Secret Key 填到 Web3Forms 后台
+  //      （表单 Settings → captcha 选 Turnstile → 贴 Secret Key）
+  //   3. 校验在 Web3Forms 服务端做，我们的站依然是纯静态
+  // Secret Key 绝对不要出现在前端代码里。
+  turnstileSiteKey: '',
 } as const;
 
 // ---- 追踪代码 ----
