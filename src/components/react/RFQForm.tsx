@@ -108,8 +108,8 @@ export default function RFQForm() {
         </div>
         <h2 className="mb-3 text-2xl font-bold text-gray-900">Talk to Our Engineers</h2>
         <p className="mb-8 text-gray-600 leading-relaxed">
-          Send us your drawings and requirements. Our engineering team replies with DFM feedback
-          and a quotation within 24 hours.
+          Tell us your extinguisher type, cylinder size and target output. Our engineering team
+          replies with a line plan and pricing within 24 hours.
         </p>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -136,7 +136,7 @@ export default function RFQForm() {
         </div>
 
         <p className="mt-6 text-xs text-gray-500">
-          Accepted drawing formats: STEP · STP · IGS · X_T · PDF · DXF
+          Useful to attach: workshop layout, cylinder drawing, photos of your current line
         </p>
       </div>
     );
@@ -263,7 +263,7 @@ export default function RFQForm() {
       <div>
         <h2 className="mb-1 text-2xl font-bold text-gray-900">Request a Quote</h2>
         <p className="text-sm text-gray-600">
-          Send your drawings — we reply within 24 hours with DFM feedback and pricing.
+          Tell us your target output — we reply within 24 hours with equipment selection and pricing.
         </p>
       </div>
 
@@ -297,7 +297,7 @@ export default function RFQForm() {
           name="message"
           rows={5}
           required
-          placeholder="Material, quantity, tolerances, surface finish, target lead time…"
+          placeholder="Extinguisher type, cylinder size, units per shift, workshop size…"
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -305,7 +305,7 @@ export default function RFQForm() {
       {FORMS.allowFileUpload ? (
         <div>
           <label htmlFor="drawing" className={labelClass}>
-            Drawing or 3D model <span className="font-normal text-gray-400">(optional)</span>
+            Layout, cylinder drawing or photos <span className="font-normal text-gray-400">(optional)</span>
           </label>
           <input
             id="drawing"
@@ -318,10 +318,10 @@ export default function RFQForm() {
         </div>
       ) : (
         <div className="rounded-lg border-2 border-dashed border-gray-200 bg-gray-50 p-4">
-          <p className="text-sm font-semibold text-gray-700">Sending drawings?</p>
+          <p className="text-sm font-semibold text-gray-700">Sending a layout or cylinder drawing?</p>
           <p className="mt-1 text-xs leading-relaxed text-gray-500">
-            After submitting, send your STEP · STP · IGS · X_T · PDF · DXF files by WhatsApp or
-            email — we quote faster with drawings in hand.
+            After submitting, send your workshop layout, cylinder drawing or photos of your current
+            line by WhatsApp or email — we quote faster with them in hand.
           </p>
         </div>
       )}

@@ -5,15 +5,15 @@
 
 export const SITE = {
   // ---- 基础身份 ----
-  title: 'Precision Machinery Co., Ltd.',        // TODO: 厂家英文公司名
+  title: 'Henan Greenbo Energy Equipment Co., Ltd.',
   description:
-    'Custom CNC machining, sheet metal fabrication and casting parts manufacturer. ISO 9001 certified, ±0.01 mm precision, exporting to 50+ countries.', // TODO: 一句话简介
+    'Fire extinguisher production equipment manufacturer — automatic dry powder filling lines, leak detection, labelling and screen printing machines, plus service equipment. 160+ patents, exporting across Asia and Africa.',
   url: 'https://zzqwdz.fun',                      // 正式域名（影响 og:url 和分享卡片）
-  author: 'Precision Machinery Co., Ltd.',        // TODO: 同公司名
-  tagline: 'Custom Metal Parts, Built to Your Drawings', // TODO: 首屏副标题
-  heroTitle: 'Custom Metal Parts,',                      // TODO: 首屏主标题第一行
-  heroHighlight: 'Built to Your Drawings',               // TODO: 首屏主标题高亮行
-  heroSubline: 'CNC machining, sheet metal fabrication and casting — from prototype to volume production, shipped worldwide.', // TODO: 首屏描述
+  author: 'Henan Greenbo Energy Equipment Co., Ltd.',
+  tagline: 'Automatic Fire Extinguisher Production Lines',
+  heroTitle: 'Fire Extinguisher',
+  heroHighlight: 'Production Equipment',
+  heroSubline: 'From cylinder welding to powder filling, leak testing, printing, labelling and packing — complete automated lines engineered in-house and delivered worldwide.',
 
   // ---- 品牌素材 ----
   logo: '',                                       // TODO: 厂家 Logo（放 public/logo.png 后填 '/logo.png'），留空则显示公司名文字
@@ -24,49 +24,50 @@ export const SITE = {
 
 // ---- 联系方式（社交流量的主要承接入口）----
 export const CONTACT = {
-  phone: '+86-371-8888-8888',                     // TODO
-  whatsapp: '8613800138000',                      // TODO: 换成真实号码（纯数字含区号）。若留 8613800000000，全站 WhatsApp 入口会自动隐藏
-  email: 'sales@zzqwdz.fun',                      // TODO: 确认这个邮箱真实存在且能收信
-  address: 'No.1 Industrial Park, Zhengzhou, Henan, China', // TODO
+  phone: '+86 17634872119',                       // 贺经理
+  whatsapp: '8617634872119',                      // 与手机号一致；若留 8613800000000，全站 WhatsApp 入口会自动隐藏
+  email: '200896215@qq.com',                      // 客户官网公开邮箱
+  address: 'Xiaodong Industrial Zone, Wuzhi County, Jiaozuo, Henan, China',
   telegram: '',                                   // 可选：俄罗斯/东欧/中东市场才需要，留空则不显示
 } as const;
 
 // ---- 公司实力数字（B2B 买家只信数字）----
 export const COMPANY = {
-  founded: '2005',                                // TODO
-  years: '20+',                                   // TODO: 年限
-  countries: '50+',                               // TODO: 出口国家数
-  precision: '±0.01 mm',                          // TODO: 加工精度
-  response: '24h',                                // TODO: 报价响应时限
-  area: '12,000 m²',                              // TODO: 厂房面积
-  staff: '180',                                   // TODO: 员工数
-  machines: '50+',                                // TODO: 设备台数
+  founded: '2006',
+  years: '20',                                    // 2006 至今
+  countries: '5+',                                // 韩国 / 印尼 / 菲律宾 / 越南 / 埃塞俄比亚
+  patents: '160+',                                // 专利总数（其中发明 3 项，每年新增 30+）
+  precision: '±1% Fill',                          // 灌装精度（灭火器灌装的关键指标）
+  response: '24h',                                // 报价响应时限
+  area: '2,000 m²',                               // 厂房面积
+  staff: '40+',                                   // 员工数
+  machines: '34',                                 // 产品型号数（生产设备 18 + 维修设备 16）
 } as const;
 
 // ---- 首页数字条（四件套）----
 export const STATS = [
-  { value: COMPANY.years, label: 'Years of Experience', desc: 'Manufacturing and exporting custom metal parts.' },
-  { value: COMPANY.countries, label: 'Countries Served', desc: 'Europe, North America, Middle East, Southeast Asia.' },
-  { value: COMPANY.precision, label: 'Precision Guaranteed', desc: 'Advanced quality control and inspection equipment.' },
-  { value: COMPANY.response, label: 'Quote Response', desc: 'Engineering feedback on your drawings within 24 hours.' },
+  { value: COMPANY.years, label: 'Years in Automation', desc: 'Building fire extinguisher production equipment since 2006.' },
+  { value: COMPANY.patents, label: 'Patents Granted', desc: 'Including 3 invention patents, with 30+ new filings each year.' },
+  { value: COMPANY.countries, label: 'Countries Served', desc: 'South Korea, Indonesia, Philippines, Vietnam and Ethiopia.' },
+  { value: COMPANY.response, label: 'Quote Response', desc: 'Line proposal and pricing sent within 24 hours.' },
 ] as const;
 
 // ---- 出口市场（首页展示，按客户实际情况增删）----
 export const EXPORT_MARKETS = [
-  'Europe',
-  'North America',
-  'Middle East',
-  'Southeast Asia',
-  'Australia',
-  'South America',
+  'South Korea',
+  'Indonesia',
+  'Philippines',
+  'Vietnam',
+  'Ethiopia',
 ] as const;
 
-// ---- 认证（B2B 信任核心要素）----
+// ---- 认证 / 资质 ----
+// 该客户暂无 CE / ISO，不编。以下四条均取自其官网公开信息。
 export const CERTIFICATIONS = [
-  { name: 'ISO 9001', desc: 'Quality management system' },
-  { name: 'CE', desc: 'European conformity' },
-  { name: 'IATF 16949', desc: 'Automotive quality standard' },
-  { name: 'SGS', desc: 'Third-party verified' },
+  { name: `${COMPANY.patents} Patents`, desc: 'National patents, 3 of them invention patents' },
+  { name: 'In-house R&D', desc: 'Automation and intelligent design team' },
+  { name: 'Full-Line Capability', desc: 'Steel plate → cylinder → painting → filling → testing → printing → packing' },
+  { name: 'After-Sales Service', desc: 'Installation, training and lifetime technical support' },
 ] as const;
 
 // ---- 询盘表单提交端点 ----
@@ -100,7 +101,7 @@ export const FORMS = {
   //      （表单 Settings → captcha 选 Turnstile → 贴 Secret Key）
   //   3. 校验在 Web3Forms 服务端做，我们的站依然是纯静态
   // Secret Key 绝对不要出现在前端代码里。
-  turnstileSiteKey: '',
+  turnstileSiteKey: '0x4AAAAAAFNfQkaluYeGPdf2',
 } as const;
 
 // ---- 追踪代码 ----
@@ -114,14 +115,14 @@ export const TRACKING = {
 // 信任背书页：导航越短越像真工厂官网，不要往回加页面
 export const NAVIGATION = [
   { name: 'Home', href: '/' },
-  { name: 'Capabilities', href: '/capabilities' },
+  { name: 'Equipment', href: '/capabilities' },
   { name: 'Contact', href: '/rfq' },
 ] as const;
 
 // ---- 社交媒体 ----
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/yourcompany',   // TODO
-  twitter: 'https://twitter.com/yourcompany',             // TODO
-  facebook: 'https://facebook.com/yourcompany',           // TODO
-  youtube: '',                                            // 可选
+  linkedin: '',                                   // TODO: 客户没有就留空，不显示
+  twitter: '',
+  facebook: '',
+  youtube: '',
 } as const;
